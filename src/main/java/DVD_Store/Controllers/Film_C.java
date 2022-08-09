@@ -12,9 +12,7 @@ public class Film_C {
     @Autowired
     private final Film_R film_R;
 
-    public Film_C(Film_R film_R) {
-        this.film_R = film_R;
-    }
+    public Film_C(Film_R film_R) {this.film_R = film_R;}
 
     //<editor-fold> desc = "GET Requests">
 
@@ -22,13 +20,17 @@ public class Film_C {
     public @ResponseBody
     Iterable<Film> getAllFilm() {
 
+        return film_R.findAll();
+    }
+
+    //</editor-fold>
+
+    //<editor-fold> desc = "GET Modified">
+
 //        Iterable<Film> myFilms = film_R.findAll();
 //        List<Film> reducedList = new ArrayList<Film>();
 //        myFilms.forEach(reducedList::add);
 //        reducedList = reducedList.stream().map()
-
-        return film_R.findAll();
-    }
 
     //</editor-fold>
 

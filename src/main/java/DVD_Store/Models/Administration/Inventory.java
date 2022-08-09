@@ -1,10 +1,14 @@
 package DVD_Store.Models.Administration;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="inventory")
 public class Inventory {
+
+//    @ManyToMany(mappedBy = "inventory")
+//    Set<Film> inventor;
 
     @Id
     @Column(name="inventory_id")
@@ -14,10 +18,17 @@ public class Inventory {
     //Attributes
     private int film_id, store_id;
     private Date last_update;
+    private long count;
 
 
     //Empty Constructor
     public Inventory() {}
+
+//    public Inventory(int film_id, long count) {
+//
+//        this.film_id = film_id;
+//        this.count = count;
+//    }
 
     //Getter and Setters
     public int getInventory_id() {
@@ -51,4 +62,5 @@ public class Inventory {
     public void setLast_update(Date last_update) {
         this.last_update = last_update;
     }
+
 }

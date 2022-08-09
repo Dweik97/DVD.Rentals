@@ -65,20 +65,16 @@ public class Actor {
         this.last_update = last_update;
     }
 
-//    public Set<Film> getActed() {
-//        return acted;
-//    }
-
     public void setActed(Set<Film> acted) {
         this.acted = acted;
     }
-
-    @Override
-    public String toString() {
-        return "Actor{" +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                '}';
-    }
+//
+//    @Override
+//    public String toString() {
+//        return "Actor{" +
+//                ", first_name='" + first_name + '\'' +
+//                ", last_name='" + last_name + '\'' +
+//                '}';
+//    }
 }
 

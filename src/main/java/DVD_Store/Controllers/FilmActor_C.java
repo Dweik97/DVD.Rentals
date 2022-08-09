@@ -24,32 +24,6 @@ public class FilmActor_C {
     }
     //</editor-fold>
 
-//    //<editor-fold> desc = "POST Requests">
-//    @PostMapping("/add/{first_name}/{last_name}")
-//    public @ResponseBody
-//    Iterable<FilmActor> addNewFilmActor(@PathVariable String first_name, @PathVariable String last_name) {
-//        FilmActor a = new FilmActor(first_name, last_name, new Date());
-//        filmActor_R.save(a);
-//        return filmActor_R.findAll();
-//    }
-//    //</editor-fold>
-
-//    //<editor-fold> desc = "PATCH Requests">
-//    @PatchMapping("/edit/{id}/{first_name}/{last_name}")
-//    public ResponseEntity<FilmActor> updateFilmActor(@PathVariable int id, @PathVariable String first_name, @PathVariable String last_name) {
-//        try {
-//            FilmActor filmActor = filmActor_R.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "FilmActor " + id + " not found"));
-//            filmActor.setFirst_name(first_name);
-//            filmActor.setLast_name(last_name);
-//            filmActor.setLast_update(new Date());
-//            return new ResponseEntity<Actor>(filmActor_R.save(filmActor), HttpStatus.OK);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
-//
-////</editor-fold>
-
     //<editor-fold> desc = "Delete Requests">
 
     @DeleteMapping("/delete/{id}")
