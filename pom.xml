@@ -8,7 +8,7 @@
 		<version>2.7.0</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.tsi.davis.gareth.sakila.connect</groupId>
+	<groupId>DVD_Store</groupId>
 	<artifactId>program</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myFirstMicroservice</name>
