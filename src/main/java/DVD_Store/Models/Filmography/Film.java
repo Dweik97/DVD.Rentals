@@ -1,5 +1,7 @@
 package DVD_Store.Models.Filmography;
 
+import DVD_Store.Models.Administration.Inventory;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -27,13 +29,8 @@ public class Film {
 
     Set<Actor> actors;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "inventory",
-//            joinColumns = @JoinColumn(name = "film_id"),
-//            inverseJoinColumns = @JoinColumn(name = "inventory_id"))
-//
-//    Set<Inventory> inventory;
+    @OneToMany(mappedBy = "film")
+    Set<Inventory> inventory;
 
     public Film(String title, String description, String rating, String special_features, int language_id, int release_year, int rental_duration, double rental_rate, int length, double replacement_cost, Date last_update) {
         this.title = title;
@@ -161,5 +158,11 @@ public class Film {
     public void setActors(Set<Actor> actedIn) {
         this.actors = actedIn;
     }
+
+    public int getCount(){
+
+        return inventory.size();
+    }
+
 }
 

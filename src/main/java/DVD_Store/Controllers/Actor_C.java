@@ -27,6 +27,12 @@ public class Actor_C {
     Iterable<Actor> getAllActor() {
         return actor_R.findAll();
     }
+
+    @GetMapping("/search/{id}")
+    public @ResponseBody
+    Iterable<Actor> getById(@PathVariable int id) {
+        return actor_R.findActorById(id);
+    }
     //</editor-fold>
 
     //<editor-fold> desc = "POST Requests">

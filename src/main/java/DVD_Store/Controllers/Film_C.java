@@ -23,6 +23,13 @@ public class Film_C {
         return film_R.findAll();
     }
 
+    @GetMapping("/search/{name}")
+    public @ResponseBody
+    Iterable<Film> searchFilms(@PathVariable String name) {
+
+        return film_R.findByTitleIgnoreCase(name);
+    }
+
     //</editor-fold>
 
     //<editor-fold> desc = "GET Modified">

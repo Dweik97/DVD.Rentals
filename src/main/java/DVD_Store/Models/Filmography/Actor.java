@@ -1,5 +1,7 @@
 package DVD_Store.Models.Filmography;
 
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -16,6 +18,9 @@ public class Actor {
     @Column(name = "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int actor_id;
+    
+    @Formula("concat(first_name, ' ', last_name)")
+    private String full_name;
 
     //Attributes
     private String first_name, last_name;
@@ -68,13 +73,13 @@ public class Actor {
     public void setActed(Set<Film> acted) {
         this.acted = acted;
     }
-//
-//    @Override
-//    public String toString() {
-//        return "Actor{" +
-//                ", first_name='" + first_name + '\'' +
-//                ", last_name='" + last_name + '\'' +
-//                '}';
-//    }
-}
 
+    public String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
+}
