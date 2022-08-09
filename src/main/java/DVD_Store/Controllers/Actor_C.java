@@ -24,7 +24,7 @@ public class Actor_C {
 
     //<editor-fold> desc = "GET Requests">
 
-    @GetMapping("/view")
+    @GetMapping("/vie")
     public @ResponseBody
     Iterable<Actor> getAllActor() {
         return actor_R.findAll();
