@@ -11,7 +11,7 @@
 	<groupId>DVD_Store</groupId>
 	<artifactId>program</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>myFirstMicroservice</name>
+	<name>MSApp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>18</java.version>
@@ -46,11 +46,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.25</version>
 		</dependency>
-		<dependency>
-			<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.8.8</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.jacoco</groupId>-->
+<!--			<artifactId>jacoco-maven-plugin</artifactId>-->
+<!--			<version>0.8.8</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
@@ -77,30 +77,51 @@
 			<artifactId>cucumber-core</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
 	</dependencies>
+
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.8</version>
 				<executions>
 					<execution>
+						<id>default-prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
-					<!-- attached to Maven test phase -->
 					<execution>
-						<id>report</id>
-						<phase>test</phase>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>report</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-check</id>
+						<goals>
+							<goal>check</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
