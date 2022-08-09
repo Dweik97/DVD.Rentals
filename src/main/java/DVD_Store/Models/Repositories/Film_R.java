@@ -10,4 +10,7 @@ public interface Film_R extends CrudRepository<Film, Integer> {
 
     @Query("SELECT f from Film f WHERE upper(f.title) LIKE UPPER(concat('%', ?1, '%'))")
     List<Film> findByTitleIgnoreCase(String title);
+
+    @Query("SELECT f from Film f WHERE upper(f.title) LIKE UPPER(concat('%', ?1, '%'))")
+    List<Film> listActors(String title);
 }

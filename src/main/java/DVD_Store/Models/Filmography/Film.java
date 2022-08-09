@@ -151,12 +151,7 @@ public class Film {
         return actors;
     }
 
-//    public Set<Inventory> getInventory() {
-//        return inventory;
-//    }
-
-    public void setActors(Set<Actor> actedIn) {
-        this.actors = actedIn;
+    public void setActors(Set<Actor> actedIn) {this.actors = actedIn;
     }
 
     public int getCount(){

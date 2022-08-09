@@ -26,7 +26,6 @@ public class Film_C {
     @GetMapping("/search/{name}")
     public @ResponseBody
     Iterable<Film> searchFilms(@PathVariable String name) {
-
         return film_R.findByTitleIgnoreCase(name);
     }
 

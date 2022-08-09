@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Date;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/actors")
 public class Actor_C {
@@ -30,8 +32,8 @@ public class Actor_C {
 
     @GetMapping("/search/{id}")
     public @ResponseBody
-    Iterable<Actor> getById(@PathVariable int id) {
-        return actor_R.findActorById(id);
+    Optional<Actor> getById(@PathVariable int id) {
+        return actor_R.findById(id);
     }
     //</editor-fold>
 
