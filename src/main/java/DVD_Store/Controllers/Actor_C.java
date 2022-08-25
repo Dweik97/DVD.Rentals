@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Date;
 import java.util.Optional;
 
+@CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
 @RestController
 @RequestMapping("/actors")
 public class Actor_C {
@@ -23,14 +24,12 @@ public class Actor_C {
     }
 
     //<editor-fold> desc = "GET Requests">
-
     @GetMapping("/view")
     public @ResponseBody
     Iterable<Actor> getAllActor() {
         return actor_R.findAll();
     }
 
-    @CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
     @GetMapping("/search/{id}")
     public @ResponseBody
     Optional<Actor> getById(@PathVariable int id) {
