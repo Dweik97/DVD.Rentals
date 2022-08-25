@@ -4,15 +4,11 @@ import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name="actor")
 
 public class Actor {
-
-    @ManyToMany(mappedBy = "actors")
-    Set<Film> acted;
 
     @Id
     @Column(name = "actor_id")
@@ -30,7 +26,6 @@ public class Actor {
         this.first_name = first_name;
         this.last_name = last_name;
         this.last_update = last_update;
-
     }
 
     //Empty Constructor
@@ -38,9 +33,6 @@ public class Actor {
     }
 
     //Getter and Setters
-    public int getActor_id() {
-        return actor_id;
-    }
 
     public void setActor_id(int actor_id) {
         this.actor_id = actor_id;
@@ -70,16 +62,12 @@ public class Actor {
         this.last_update = last_update;
     }
 
-    public void setActed(Set<Film> acted) {
-        this.acted = acted;
-    }
+//    public void setActed(Set<Film> acted) {
+//        this.acted = acted;
+//    }
 
     public String getFull_name() {
         return full_name;
-    }
-
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
     }
 
 }

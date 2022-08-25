@@ -10,4 +10,3 @@ public class MSApp {
 		SpringApplication.run(MSApp.class, args);
 	}
 }
-

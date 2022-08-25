@@ -10,11 +10,13 @@
 	</parent>
 	<groupId>DVD_Store</groupId>
 	<artifactId>program</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>MSApp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Spring Boot</description>
 	<properties>
 		<java.version>18</java.version>
+		<sonar.organization>dweik97</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>

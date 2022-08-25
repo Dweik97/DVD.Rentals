@@ -1,4 +1,5 @@
 package DVD_Store.Models.Administration;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,6 +11,10 @@ public class Rental {
     @Column(name="rental_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rental_id;
+
+    @ManyToOne
+    @JoinColumn(name="inventory_id", nullable=false, insertable = false, updatable = false)
+    private Inventory rented;
 
     //Attributes
     private int inventory_id, customer_id, staff_id;
@@ -23,7 +28,6 @@ public class Rental {
         this.last_update = last_update;
         this.return_date = return_date;
     }
-
 
     //Empty Constructor
     public Rental() {}

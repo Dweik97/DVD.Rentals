@@ -1,4 +1,5 @@
 package DVD_Store.Models.Administration;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,19 +12,40 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customer_id;
 
-    //Attributes
-    private int store_id, active;
-    private String first_name, last_name, email;
-    private Date create_date, last_update;
+    @Column(name="store_id")
+    private int store_id;
 
-    public Customer(int store_id, String first_name, String last_name, String email, Date create_date, Date last_update, int active) {
+    @Column(name="active")
+    private int active;
+
+    @Column(name="first_name")
+    private String first_name;
+
+    @Column(name="last_name")
+    private String last_name;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="address_id")
+    private String address_id;
+
+    @Column(name="create_date")
+    private Date create_date;
+
+    @Column(name="last_update")
+    private Date last_update;
+
+    public Customer(int customer_id, int store_id, int active, String first_name, String last_name, String email, String address_id, Date create_date, Date last_update) {
+        this.customer_id = customer_id;
         this.store_id = store_id;
+        this.active = active;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
+        this.address_id = address_id;
         this.create_date = create_date;
         this.last_update = last_update;
-        this.active = active;
     }
 
     //Empty Constructor
@@ -41,14 +63,6 @@ public class Customer {
 
     public int getActive() {
         return active;
-    }
-
-    public int getStore_id() {
-        return store_id;
-    }
-
-    public void setStore_id(int store_id) {
-        this.store_id = store_id;
     }
 
     public String getFirst_name() {

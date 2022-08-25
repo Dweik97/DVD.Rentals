@@ -30,6 +30,7 @@ public class Actor_C {
         return actor_R.findAll();
     }
 
+    @CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
     @GetMapping("/search/{id}")
     public @ResponseBody
     Optional<Actor> getById(@PathVariable int id) {

@@ -11,9 +11,7 @@ public class Inventory_C {
     @Autowired
     private final Inventory_R inventory_R;
 
-    public Inventory_C(Inventory_R inventory_R) {
-        this.inventory_R = inventory_R;
-    }
+    public Inventory_C(Inventory_R inventory_R) {this.inventory_R = inventory_R;}
 
     //<editor-fold> desc = "GET Requests">
 

@@ -17,22 +17,17 @@ public class Inventory {
     //Attributes
     private int store_id;
 
-    @JoinColumn(name = "film_id")
     @ManyToOne
-    private Film film;
+    @JoinColumn(name="film_id")
+    private Film inv;
+
+//    @OneToOne(mappedBy = "rented")
+//    private Rental rented;
 
     private Date last_update;
-    private long count;
-
 
     //Empty Constructor
     public Inventory() {}
-
-//    public Inventory(int film_id, long count) {
-//
-//        this.film_id = film_id;
-//        this.count = count;
-//    }
 
     //Getter and Setters
     public int getInventory_id() {
@@ -57,13 +52,5 @@ public class Inventory {
 
     public void setLast_update(Date last_update) {
         this.last_update = last_update;
-    }
-
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
     }
 }

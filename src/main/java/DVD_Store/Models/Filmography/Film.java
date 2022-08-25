@@ -1,9 +1,8 @@
 package DVD_Store.Models.Filmography;
 
-import DVD_Store.Models.Administration.Inventory;
-
+import org.hibernate.annotations.Formula;
 import javax.persistence.*;
-import java.util.Date;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -15,11 +14,49 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int film_id;
 
-    //Attributes
-    private String title, description, rating, special_features;
-    private int language_id, release_year, rental_duration, length;
-    private double replacement_cost, rental_rate;
-    private Date last_update;
+    @Column(name="title")
+    private String title;
+
+    @Column(name="description")
+    private String description;
+
+    @Column(name="release_year")
+    private Integer releaseYear;
+
+    @ManyToOne
+    @JoinColumn(name="language_id", nullable=false, insertable = false, updatable = false)
+    private Language language;
+
+    @Column(name="language_id", nullable=false)
+    private Integer language_id;
+
+    @Column(name="original_language_id")
+    private Integer originalLanguageId;
+
+    @Column(name="rental_duration")
+    private Integer rentalDuration;
+
+    @Column(name="rental_rate")
+    private BigDecimal rentalRate;
+
+    @Column(name="length")
+    private Integer length;
+
+    @Column(name="replacement_cost")
+    private BigDecimal replacementCost;
+
+    @Column(name="rating")
+    private String rating;
+
+    @Column(name="special_features")
+    private String specialFeatures;
+
+     @Formula("(select " +
+            "(select COUNT(i.film_id) from inventory i where i.film_id= film_id) - " +
+            "(select COUNT(i.inventory_id) FROM inventory i INNER JOIN rental r ON " +
+             "i.inventory_id = r.inventory_id WHERE r.return_date IS NULL AND i.film_id = film_id))")
+    private Integer availableCopies;
+
 
     @ManyToMany
     @JoinTable(
@@ -29,21 +66,25 @@ public class Film {
 
     Set<Actor> actors;
 
-    @OneToMany(mappedBy = "film")
-    Set<Inventory> inventory;
+    @ManyToMany
+    @JoinTable(
+            name = "film_category",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
 
-    public Film(String title, String description, String rating, String special_features, int language_id, int release_year, int rental_duration, double rental_rate, int length, double replacement_cost, Date last_update) {
+    Set<Category> category;
+
+    public Film(int film_id, String title, String description, Integer releaseYear, Language originalLanguage, Integer originalLanguageId, Integer rentalDuration, BigDecimal rentalRate, Integer length, BigDecimal replacementCost, String rating, String specialFeatures) {
+        this.film_id = film_id;
         this.title = title;
         this.description = description;
-        this.rating = rating;
-        this.special_features = special_features;
-        this.language_id = language_id;
-        this.release_year = release_year;
-        this.rental_duration = rental_duration;
-        this.rental_rate = rental_rate;
+        this.releaseYear = releaseYear;
+        this.rentalDuration = rentalDuration;
+        this.rentalRate = rentalRate;
         this.length = length;
-        this.replacement_cost = replacement_cost;
-        this.last_update = last_update;
+        this.replacementCost = replacementCost;
+        this.rating = rating;
+        this.specialFeatures = specialFeatures;
     }
 
     //Empty Constructor
@@ -51,113 +92,84 @@ public class Film {
 
     //Getters and Setters
 
-    public int getFilm_id() {
-        return film_id;
-    }
-
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
-    }
-
+//    public int getFilm_id() {
+//        return film_id;
+//    }
     public String getTitle() {
         return title;
     }
+    public Language getLanguage() {
+        return language;
+    }
+//    public String getDescription() {
+//        return description;
+//    }
+//    public Integer getReleaseYear() {
+//        return releaseYear;
+//    }
+//    public Integer getRentalDuration() {
+//        return rentalDuration;
+//    }
+//    public BigDecimal getRentalRate() {
+//        return rentalRate;
+//    }
+//    public Integer getLength() {
+//        return length;
+//    }
+//    public BigDecimal getReplacementCost() {
+//        return replacementCost;
+//    }
+//    public String getRating() {
+//        return rating;
+//    }
+//    public String getSpecialFeatures() {
+//        return specialFeatures;
+//    }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public Integer getAvailableCopies() {
+        return availableCopies;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
-
-    public String getSpecial_features() {
-        return special_features;
-    }
-
-    public void setSpecial_features(String special_features) {
-        this.special_features = special_features;
-    }
-
-    public int getLanguage_id() {
-        return language_id;
-    }
-
-    public void setLanguage_id(int language_id) {
-        this.language_id = language_id;
-    }
-
-    public int getRelease_year() {
-        return release_year;
-    }
-
-    public void setRelease_year(int release_year) {
-        this.release_year = release_year;
-    }
-
-    public int getRental_duration() {
-        return rental_duration;
-    }
-
-    public void setRental_duration(int rental_duration) {
-        this.rental_duration = rental_duration;
-    }
-
-    public double getRental_rate() {
-        return rental_rate;
-    }
-
-    public void setRental_rate(double rental_rate) {
-        this.rental_rate = rental_rate;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public double getReplacement_cost() {
-        return replacement_cost;
-    }
-
-    public void setReplacement_cost(double replacement_cost) {
-        this.replacement_cost = replacement_cost;
-    }
-
-    public Date getLast_update() {
-        return last_update;
-    }
-
-    public void setLast_update(Date last_update) {
-        this.last_update = last_update;
+    public Set<Category> getCategory() {
+    return category;
     }
 
     public Set<Actor> getActors() {
         return actors;
     }
 
-    public void setActors(Set<Actor> actedIn) {this.actors = actedIn;
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
-
-    public int getCount(){
-
-        return inventory.size();
+    public void setTitle(String title) {
+        this.title = title;
     }
-
+    public void setReleaseYear(Integer releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+    public void setLanguage_id(Integer languageId) {
+        this.language_id = languageId;
+    }
+    public void setOriginalLanguageId(Integer originalLanguageId) {
+        this.originalLanguageId = originalLanguageId;
+    }
+    public void setRentalDuration(Integer rentalDuration) {
+        this.rentalDuration = rentalDuration;
+    }
+    public void setRentalRate(BigDecimal rentalRate) {
+        this.rentalRate = rentalRate;
+    }
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+    public void setReplacementCost(BigDecimal replacementCost) {
+        this.replacementCost = replacementCost;
+    }
+    public void setSpecialFeatures(String specialFeatures) {
+        this.specialFeatures = specialFeatures;
+    }
+    public void setCategory(Set<Category> category) {
+        this.category = category;
+    }
 }
 

@@ -1,4 +1,5 @@
 package DVD_Store.Models.Filmography;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,20 +14,15 @@ public class Language {
 
     //Attributes
     private String name;
-    private Date last_update;
 
     public Language(String name, Date last_update) {
         this.name = name;
-        this.last_update = last_update;
     }
 
     //Empty Constructor
     public Language() {}
 
     //Getter and Setters
-    public int getLanguage_id() {
-        return language_id;
-    }
 
     public void setLanguage_id(int language_id) {
         this.language_id = language_id;
@@ -38,13 +34,5 @@ public class Language {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getLast_update() {
-        return last_update;
-    }
-
-    public void setLast_update(Date last_update) {
-        this.last_update = last_update;
     }
 }

@@ -1,6 +1,7 @@
 package DVD_Store.Models.Filmography;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name="category")
@@ -10,6 +11,9 @@ public class Category {
     @Column(name="category_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int category_id;
+
+    @ManyToMany(mappedBy = "category")
+    Set<Film> categories;
 
     //Attributes
     private String name;
@@ -24,9 +28,6 @@ public class Category {
     public Category() {}
 
     //Getter and Setters
-    public int getCategory_id() {
-        return category_id;
-    }
 
     public void setCategory_id(int category_id) {
         this.category_id = category_id;
@@ -40,11 +41,4 @@ public class Category {
         this.name = name;
     }
 
-    public Date getLast_update() {
-        return last_update;
-    }
-
-    public void setLast_update(Date last_update) {
-        this.last_update = last_update;
-    }
 }
