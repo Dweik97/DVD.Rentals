@@ -13,8 +13,8 @@ class ActorTest {
     @Test
     public void test_GetFirstName(){
         Actor testActor = new Actor();
-        testActor.setFirst_name("James");
-        assertEquals("James", testActor.getFirst_name(), "The name didn't match");
+        testActor.setFirst_name("Jamie");
+        assertEquals("Jamie", testActor.getFirst_name(), "The name didn't match");
     }
 
     @Test
