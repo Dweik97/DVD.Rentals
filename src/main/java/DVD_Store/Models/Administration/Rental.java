@@ -20,15 +20,6 @@ public class Rental {
     private int inventory_id, customer_id, staff_id;
     private Date rental_date, last_update, return_date;
 
-    public Rental(int inventory_id, int customer_id, int staff_id, Date rental_date, Date last_update, Date return_date) {
-        this.inventory_id = inventory_id;
-        this.customer_id = customer_id;
-        this.staff_id = staff_id;
-        this.rental_date = rental_date;
-        this.last_update = last_update;
-        this.return_date = return_date;
-    }
-
     //Empty Constructor
     public Rental() {}
 

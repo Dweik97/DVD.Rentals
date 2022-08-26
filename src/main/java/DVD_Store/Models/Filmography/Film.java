@@ -74,19 +74,6 @@ public class Film {
 
     Set<Category> category;
 
-    public Film(int film_id, String title, String description, Integer releaseYear, Language originalLanguage, Integer originalLanguageId, Integer rentalDuration, BigDecimal rentalRate, Integer length, BigDecimal replacementCost, String rating, String specialFeatures) {
-        this.film_id = film_id;
-        this.title = title;
-        this.description = description;
-        this.releaseYear = releaseYear;
-        this.rentalDuration = rentalDuration;
-        this.rentalRate = rentalRate;
-        this.length = length;
-        this.replacementCost = replacementCost;
-        this.rating = rating;
-        this.specialFeatures = specialFeatures;
-    }
-
     //Empty Constructor
     public Film() {}
 

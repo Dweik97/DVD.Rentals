@@ -36,18 +36,6 @@ public class Customer {
     @Column(name="last_update")
     private Date last_update;
 
-    public Customer(int customer_id, int store_id, int active, String first_name, String last_name, String email, String address_id, Date create_date, Date last_update) {
-        this.customer_id = customer_id;
-        this.store_id = store_id;
-        this.active = active;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
-        this.address_id = address_id;
-        this.create_date = create_date;
-        this.last_update = last_update;
-    }
-
     //Empty Constructor
     public Customer() {}
 

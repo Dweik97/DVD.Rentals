@@ -16,11 +16,6 @@ public class FilmCategory {
     private int category_id;
     private Date last_update;
 
-    public FilmCategory(int category_id, Date last_update) {
-        this.category_id = category_id;
-        this.last_update = last_update;
-    }
-
     //Empty Constructor
     public FilmCategory() {}
 

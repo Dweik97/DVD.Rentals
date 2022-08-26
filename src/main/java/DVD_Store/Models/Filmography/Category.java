@@ -19,11 +19,6 @@ public class Category {
     private String name;
     private Date last_update;
 
-    public Category(String name, Date last_update) {
-        this.name = name;
-        this.last_update = last_update;
-    }
-
     //Empty Constructor
     public Category() {}
 

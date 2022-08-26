@@ -17,14 +17,6 @@ public class Payment {
     private BigDecimal amount;
     private Date payment_date, last_update;
 
-    public Payment(int customer_id, int staff_id, int rental_id, BigDecimal amount, Date payment_date, Date last_update) {
-        this.customer_id = customer_id;
-        this.staff_id = staff_id;
-        this.rental_id = rental_id;
-        this.amount = amount;
-        this.payment_date = payment_date;
-        this.last_update = last_update;
-    }
 
     //Empty Constructor
     public Payment() {}

@@ -16,11 +16,6 @@ public class FilmActor {
     private int actor_id;
     private Date last_update;
 
-    public FilmActor(int actor_id, Date last_update) {
-        this.actor_id = actor_id;
-        this.last_update = last_update;
-    }
-
     //Empty Constructor
     public FilmActor() {}
 
