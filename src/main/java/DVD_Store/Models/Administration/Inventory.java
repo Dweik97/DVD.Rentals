@@ -21,9 +21,6 @@ public class Inventory {
     @JoinColumn(name="film_id")
     private Film inv;
 
-//    @OneToOne(mappedBy = "rented")
-//    private Rental rented;
-
     private Date last_update;
 
     //Empty Constructor

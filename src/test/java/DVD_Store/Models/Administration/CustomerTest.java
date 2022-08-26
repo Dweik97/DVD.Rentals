@@ -23,7 +23,7 @@ class CustomerTest {
     }
 
     @Test
-    public void getFirst_name(){
+    void getFirst_name(){
         test.setFirst_name("Jamie");
         assertEquals("Jamie", test.getFirst_name(), "Mismatch");
     }

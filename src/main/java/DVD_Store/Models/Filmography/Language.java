@@ -1,7 +1,6 @@
 package DVD_Store.Models.Filmography;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="language")
@@ -14,10 +13,6 @@ public class Language {
 
     //Attributes
     private String name;
-
-    public Language(String name, Date last_update) {
-        this.name = name;
-    }
 
     //Empty Constructor
     public Language() {}

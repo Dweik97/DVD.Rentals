@@ -23,10 +23,6 @@ class FilmTest {
     }
 
     @Test
-    void getLanguage() {
-    }
-
-    @Test
     void getDescription() {
         test.setDescription("Description");
         assertEquals("Description", test.getDescription(), "Mismatch");

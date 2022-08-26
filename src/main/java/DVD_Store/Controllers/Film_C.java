@@ -31,15 +31,6 @@ public class Film_C {
 
     //</editor-fold>
 
-    //<editor-fold> desc = "GET Modified">
-
-//        Iterable<Film> myFilms = film_R.findAll();
-//        List<Film> reducedList = new ArrayList<Film>();
-//        myFilms.forEach(reducedList::add);
-//        reducedList = reducedList.stream().map()
-
-    //</editor-fold>
-
     //<editor-fold> desc = "Delete Requests">
 
     @DeleteMapping("/delete/{id}")

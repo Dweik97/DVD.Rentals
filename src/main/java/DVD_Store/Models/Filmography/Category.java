@@ -1,6 +1,6 @@
 package DVD_Store.Models.Filmography;
+
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -17,7 +17,6 @@ public class Category {
 
     //Attributes
     private String name;
-    private Date last_update;
 
     //Empty Constructor
     public Category() {}
