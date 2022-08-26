@@ -92,48 +92,45 @@ public class Film {
 
     //Getters and Setters
 
-//    public int getFilm_id() {
-//        return film_id;
-//    }
+    public int getFilm_id() {
+        return film_id;
+    }
     public String getTitle() {
         return title;
     }
     public Language getLanguage() {
         return language;
     }
-//    public String getDescription() {
-//        return description;
-//    }
-//    public Integer getReleaseYear() {
-//        return releaseYear;
-//    }
-//    public Integer getRentalDuration() {
-//        return rentalDuration;
-//    }
-//    public BigDecimal getRentalRate() {
-//        return rentalRate;
-//    }
-//    public Integer getLength() {
-//        return length;
-//    }
-//    public BigDecimal getReplacementCost() {
-//        return replacementCost;
-//    }
-//    public String getRating() {
-//        return rating;
-//    }
-//    public String getSpecialFeatures() {
-//        return specialFeatures;
-//    }
-
+    public String getDescription() {
+        return description;
+    }
+    public Integer getReleaseYear() {
+        return releaseYear;
+    }
+    public Integer getRentalDuration() {
+        return rentalDuration;
+    }
+    public BigDecimal getRentalRate() {
+        return rentalRate;
+    }
+    public Integer getLength() {
+        return length;
+    }
+    public BigDecimal getReplacementCost() {
+        return replacementCost;
+    }
+    public String getRating() {
+        return rating;
+    }
+    public String getSpecialFeatures() {
+        return specialFeatures;
+    }
     public Integer getAvailableCopies() {
         return availableCopies;
     }
-
     public Set<Category> getCategory() {
     return category;
     }
-
     public Set<Actor> getActors() {
         return actors;
     }
@@ -170,6 +167,25 @@ public class Film {
     }
     public void setCategory(Set<Category> category) {
         this.category = category;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getLanguage_id() {
+        return language_id;
+    }
+
+    public Integer getOriginalLanguageId() {
+        return originalLanguageId;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public void setAvailableCopies(Integer availableCopies) {
+        this.availableCopies = availableCopies;
     }
 }
 

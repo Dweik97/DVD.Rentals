@@ -105,10 +105,6 @@ public class Customer {
         this.last_update = last_update;
     }
 
-    public int isActive() {
-        return active;
-    }
-
     public void setActive(int active) {
         this.active = active;
     }

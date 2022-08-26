@@ -2,67 +2,60 @@ package DVD_Store.Models.Administration;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CustomerTest {
 
-    @Test
-    void getCustomer_id() {
-    }
+    Customer test = new Customer();
 
     @Test
-    void setCustomer_id() {
+    void getCustomer_id() {
+        test.setCustomer_id(1);
+        assertEquals(1, test.getCustomer_id(), "Mismatch");
     }
 
     @Test
     void getActive() {
+        test.setActive(1);
+        assertEquals(1, test.getActive(), "Mismatch");
     }
 
     @Test
-    void getFirst_name() {
+    public void getFirst_name(){
+        test.setFirst_name("Jamie");
+        assertEquals("Jamie", test.getFirst_name(), "Mismatch");
     }
 
-    @Test
-    void setFirst_name() {
-    }
 
     @Test
     void getLast_name() {
-    }
-
-    @Test
-    void setLast_name() {
+        test.setLast_name("Brown");
+        assertEquals("Brown", test.getLast_name(), "Mismatch");
     }
 
     @Test
     void getEmail() {
+        test.setEmail("E-mail");
+        assertEquals("E-mail", test.getEmail(), "Mismatch");
     }
 
-    @Test
-    void setEmail() {
-    }
 
     @Test
     void getCreate_date() {
+        Date d = new Date(2017,1,30);
+        test.setLast_update(d);
+        assertEquals(d, test.getLast_update(), "Mismatch");
+
     }
 
-    @Test
-    void setCreate_date() {
-    }
 
     @Test
     void getLast_update() {
-    }
+        Date d = new Date(2017,1,30);
+        test.setLast_update(d);
+        assertEquals(d, test.getLast_update(), "Mismatch");
 
-    @Test
-    void setLast_update() {
-    }
-
-    @Test
-    void isActive() {
-    }
-
-    @Test
-    void setActive() {
     }
 }

@@ -2,42 +2,34 @@ package DVD_Store.Models.Filmography;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ActorTest {
 
-    @Test
-    void setActor_id() {
-    }
+    Actor test = new Actor();
 
     @Test
-    public void test_GetFirstName(){
-        Actor testActor = new Actor();
-        testActor.setFirst_name("Jamie");
-        assertEquals("Jamie", testActor.getFirst_name(), "The name didn't match");
+    public void getFirst_name(){
+        test.setFirst_name("Jamie");
+        assertEquals("Jamie", test.getFirst_name(), "Mismatch");
     }
 
-    @Test
-    void setFirst_name() {
-    }
 
     @Test
     void getLast_name() {
-    }
-
-    @Test
-    void setLast_name() {
+        test.setLast_name("Brown");
+        assertEquals("Brown", test.getLast_name(), "Mismatch");
     }
 
     @Test
     void getLast_update() {
+
+        Date d = new Date(2017,1,30);
+        test.setLast_update(d);
+        assertEquals(d, test.getLast_update(), "Mismatch");
+
     }
 
-    @Test
-    void setLast_update() {
-    }
-
-    @Test
-    void getFull_name() {
-    }
 }

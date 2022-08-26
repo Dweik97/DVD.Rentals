@@ -1,5 +1,6 @@
 package DVD_Store.Models.Administration;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -13,10 +14,10 @@ public class Payment {
 
     //Attributes
     private int customer_id, staff_id, rental_id;
-    private double amount;
+    private BigDecimal amount;
     private Date payment_date, last_update;
 
-    public Payment(int customer_id, int staff_id, int rental_id, double amount, Date payment_date, Date last_update) {
+    public Payment(int customer_id, int staff_id, int rental_id, BigDecimal amount, Date payment_date, Date last_update) {
         this.customer_id = customer_id;
         this.staff_id = staff_id;
         this.rental_id = rental_id;
@@ -61,11 +62,11 @@ public class Payment {
         this.rental_id = rental_id;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

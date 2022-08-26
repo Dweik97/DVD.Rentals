@@ -1,7 +1,5 @@
 package DVD_Store.Models.Filmography;
 
-import org.hibernate.annotations.Formula;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -14,9 +12,6 @@ public class Actor {
     @Column(name = "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int actor_id;
-    
-    @Formula("concat(first_name, ' ', last_name)")
-    private String full_name;
 
     //Attributes
     private String first_name, last_name;
@@ -33,10 +28,6 @@ public class Actor {
     }
 
     //Getter and Setters
-
-    public void setActor_id(int actor_id) {
-        this.actor_id = actor_id;
-    }
 
     public String getFirst_name() {
         return first_name;
@@ -60,14 +51,6 @@ public class Actor {
 
     public void setLast_update(Date last_update) {
         this.last_update = last_update;
-    }
-
-//    public void setActed(Set<Film> acted) {
-//        this.acted = acted;
-//    }
-
-    public String getFull_name() {
-        return full_name;
     }
 
 }

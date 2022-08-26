@@ -24,10 +24,6 @@ public class Language {
 
     //Getter and Setters
 
-    public void setLanguage_id(int language_id) {
-        this.language_id = language_id;
-    }
-
     public String getName() {
         return name;
     }

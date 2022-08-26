@@ -6,15 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LanguageTest {
 
-    @Test
-    void setLanguage_id() {
-    }
+    Language test = new Language();
 
     @Test
     void getName() {
+        test.setName("Name");
+        assertEquals("Name", test.getName(), "Mismatch");
     }
 
-    @Test
-    void setName() {
-    }
 }

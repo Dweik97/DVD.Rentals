@@ -6,15 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CategoryTest {
 
-    @Test
-    void setCategory_id() {
-    }
+    Category test = new Category();
 
     @Test
     void getName() {
-    }
-
-    @Test
-    void setName() {
+        test.setName("Jamie");
+        assertEquals("Jamie", test.getName(), "Mismatch");
     }
 }

@@ -2,63 +2,51 @@ package DVD_Store.Models.Administration;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class RentalTest {
 
-    @Test
-    void getRental_id() {
-    }
+    Rental test = new Rental();
+
 
     @Test
-    void setRental_id() {
+    void getRental_id() {
+        test.setRental_id(1);
+        assertEquals(1, test.getRental_id(), "Mismatch");
     }
 
     @Test
     void getInventory_id() {
-    }
-
-    @Test
-    void setInventory_id() {
+        test.setInventory_id(1);
+        assertEquals(1, test.getInventory_id(), "Mismatch");
     }
 
     @Test
     void getCustomer_id() {
-    }
-
-    @Test
-    void setCustomer_id() {
+        test.setCustomer_id(1);
+        assertEquals(1, test.getCustomer_id(), "Mismatch");
     }
 
     @Test
     void getStaff_id() {
-    }
-
-    @Test
-    void setStaff_id() {
-    }
-
-    @Test
-    void getRental_date() {
-    }
-
-    @Test
-    void setRental_date() {
+        test.setStaff_id(1);
+        assertEquals(1, test.getStaff_id(), "Mismatch");
     }
 
     @Test
     void getLast_update() {
-    }
-
-    @Test
-    void setLast_update() {
+        Date d = new Date(2017,1,30);
+        test.setLast_update(d);
+        assertEquals(d, test.getLast_update(), "Mismatch");
     }
 
     @Test
     void getReturn_date() {
+        Date d = new Date(2017,1,30);
+        test.setReturn_date(d);
+        assertEquals(d, test.getReturn_date(), "Mismatch");
     }
 
-    @Test
-    void setReturn_date() {
-    }
 }

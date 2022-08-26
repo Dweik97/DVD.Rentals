@@ -29,10 +29,6 @@ public class Category {
 
     //Getter and Setters
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
-    }
-
     public String getName() {
         return name;
     }
