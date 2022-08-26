@@ -11,7 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Date;
 import java.util.Optional;
 
-@CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
 @RestController
 @RequestMapping("/actors")
 public class Actor_C {
